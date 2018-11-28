@@ -1,1 +1,355 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>mysell</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0"><link rel=stylesheet type=text/css href=./static/reset.css><link href=/static/css/app.c3efce449c32b4c442c2e19bfcdfcb77.css rel=stylesheet></head><body><div id=app><router-view></router-view></div><script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=/static/js/vendor.98dbf61307d8aff50687.js></script><script type=text/javascript src=/static/js/app.753b295528fbde6485d5.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.main {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 479px) {
+			.main {
+				width: 300px;
+			}
+		}
+
+		.main {
+			margin: 0 auto;
+		}
+
+		.top {
+			height: 100px;
+			padding: 45px 0 0 40px;
+			background: #292929;
+			color: #fff;
+
+		}
+
+		.top h1 {
+			font-size: 30px;
+
+		}
+
+		.middle {
+			display: flex;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			overflow: hidden;
+
+		}
+
+		.left {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 80px;
+			flex: 0 0 80px;
+			width: 60%;
+			background: #fff;
+			padding: 5px 20px 30px 30px;
+		}
+
+		.item {
+			padding: 30px 0 0 0;
+			color: #666
+		}
+
+		.item h2 {
+			font-size: 18px;
+			color: #292929;
+			font-weight: bold;
+			word-break: break-all;
+			letter-spacing: 0.4px;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px !important;
+		}
+
+		.item-icon .item-list {
+			display: inline-block;
+		}
+
+		.item-list i,
+		.iconinfo i {
+			margin: 0 4px 0 6px
+		}
+
+		.item-content {
+			margin: 15px 0;
+		}
+
+		.item-content .info {
+			position: relative;
+			height: 30px;
+		}
+
+		.item-content .info .time {
+			position: absolute;
+			left: 0;
+			width: 140px;
+			height: 30px;
+			line-height: 27px;
+			margin: 0 10px 10px 0;
+			padding-left: 4px;
+			background: url(img/span_time.png) no-repeat -28px 0;
+			color: #fff;
+		}
+
+		.item-content .info .name {
+			position: absolute;
+			right: 2px;
+			font-weight: bold;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.post {
+			font-size: 14px;
+			color: #666;
+			margin: 8px 0;
+		}
+
+		.text ul li {
+			list-style: decimal inside;
+			padding: 5px 0;
+			font-size: 14px;
+		}
+
+		.text ul li a {
+			text-decoration: underline
+		}
+
+		.right {
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			padding: 5px 30px 30px 20px;
+			background: #f3f5f7;
+		}
+
+		.iconinfo li {
+			padding: 5px 0;
+		}
+
+		.right .item .skill-list {
+			display: inline-block;
+			position: relative;
+			width: 74px;
+			height: 110px;
+			margin-right: 0;
+			margin-bottom: 15px;
+			font-size: 14px;
+		}
+
+		.right .item .skill-list .skill-title {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 76px;
+			text-align: center;
+		}
+
+		.right .item .skill-list .skill-slider {
+			position: absolute;
+			left: 5px;
+			right: 5px;
+			top: 0;
+		}
+
+		.right .item .skill-list .skill-slider s {
+			display: block;
+			width: 68px;
+			height: 68px;
+		}
+
+		.right .item .skill-list .skill-slider s i {
+			display: block;
+			width: 68px;
+			height: 68px;
+			border-radius: 50%;
+			background: url(img/skill_default.png) no-repeat;
+
+			background-color: #ccc;
+		}
+
+		.right .item .skill-list .average s i {
+			background-position-x: 0;
+		}
+
+		.right .item .skill-list .good s i {
+			background-position-x: -68px;
+		}
+
+		.right .item .skill-list .advanced s i {
+			background-position-x: -136px;
+		}
+
+		.right .item .skill-list .expert s i {
+			background-position-x: -205px;
+		}
+
+		.right .item .skill-list .skill-slider span {
+			position: absolute;
+			display: block;
+			top: 4px;
+			left: 4px;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			border-radius: 50%;
+			overflow: hidden;
+			background-color: #f4f4f4;
+		}
+
+		.right .item .skill-list span::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="top">
+			<h1>王蓉蓉</h1>
+			<div class="mycontent">对代码有很高的要求，能按时高质量的完成作品</div>
+		</div>
+		<div class="middle">
+			<div class="left">
+				<div class="item">
+					<h2>求职意向</h2>
+					<div class="item-icon">
+						<div class="item-list">
+							<i class="icon-info"></i><span>前端工程师</span>
+						</div>
+						<div class="item-list">
+							<i class="icon-location"></i><span>北京</span>
+						</div>
+						<div class="item-list">
+							<i class="icon-hour-glass"></i><span>随时可入职</span>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<h2>工作经验</h2>
+					<div class="item-content">
+						<div class="info">
+							<span class="time">2012.7-2014.7</span><span class="name">热酷游戏公司</span>
+						</div>
+
+						<div class="post">前端工程师</div>
+						<div class="text">
+							<ul>
+
+								<li>使用 HTML、CSS 编写页面，通过优雅降级，处理各种浏览器兼容性问题。</li>
+								<li>运用 jQuery 等框架库，实现页面中需要效果，提高团队开发效率。</li>
+								<li>通过 Ajax 或 Jsonp 与后台数据进行交互，与后端工作有效对接，优化网站功能。</li>
+								<li>团队讨论具体功能的细节问题，与其他技术人员沟通并制定设计规范。</li>
+								<li><a href="http://www.rekoo.com/">热酷网</a></li>
+								<li><a href="http://milk.rekoo.com/">牛奶星星乐</a></li>
+								<li><a href="http://sgs.rekoo.com/">三国杀</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="item-content">
+						<div class="info">
+							<span class="time">2010.7-2012.7</span><span class="name">掌秀网</span>
+						</div>
+
+						<div class="post">前端工程师</div>
+						<div class="text">
+							<ul>
+								<li>编写 HTML+CSS，根据 PSD 制作符合W3C标准的页面；</li>
+								<li>使用 jQuery 库实现轮播图的效果，Tab 切换，放大镜效果，图片覆盖效果；</li>
+
+								<li>使用 Ajax+JSON 实现前后端交互；</li>
+								<li>使用 CSS+JS 实现登录注册和评分系统遮罩功能 ；</li>
+							</ul>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="item">
+					<h2>项目经验</h2>
+					<div class="item-content">
+
+						<div class="info">
+							<span class="time">2018.5-现在</span><span class="name">外卖app</span>
+						</div>
+						<div class="post">前端工程师</div>
+						<div class="text">
+							<ul>
+								<li>使用 Vue 开发“饿了么”外卖 APP</li>
+								<li>使用 Vue-cli 脚手架来搭建项目</li>
+								<li>使用 Webpack 的管理依赖模块理和打包。</li>
+								<li>完成外卖 App 最核心的商家模块（包括商品、评论、商家介绍、购物车等各模块）</li>
+
+								<li>预览 <a href="https://wrr1992.github.io/demo/index.html#/goods">外卖app</a></li>
+							</ul>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="right">
+				<div class="item">
+					<h2>基本信息</h2>
+					<ul class="iconinfo">
+						<li><i class="icon-user"></i><span>199201</span></li>
+						<li><i class="icon-work-age"></i><span>4年</span></li>
+						<li><i class="icon-phone"></i><span>18612421203</span></li>
+						<li><i class="icon-email"></i><span>wangrong9929@163.com</span></li>
+					</ul>
+				</div>
+				<div class="item">
+					<h2>自我评价</h2>
+					<div>
+						本人性格开朗，有很强的团队合作意识，能够很快的适应到新的团队合作组中。在工作上有上进心，喜欢不断汲取新的技术与知识，对上级交代的任务认真负责并能细心完成，能够吃苦耐劳，并积极完成。平时业余时间喜欢打羽毛球、骑行，阅读等
+					</div>
+				</div>
+				<div class="item">
+					<h2>技能特长</h2>
+					<div class="skill-list">
+						<span class="skill-title">HTML</span>
+						<span class="skill-slider expert"><s><i></i></s><span>精通</span></span>
+					</div>
+					<div class="skill-list">
+						<span class="skill-title">CSS</span>
+						<span class="skill-slider expert"><s><i></i></s><span>精通</span></span>
+					</div>
+					<div class="skill-list">
+						<span class="skill-title">jQuery</span>
+						<span class="skill-slider advanced"><s><i></i></s><span>良好</span></span>
+					</div>
+					<div class="skill-list">
+						<span class="skill-title">Vue</span>
+						<span class="skill-slider good"><s><i></i></s><span>熟悉</span></span>
+					</div>
+					<div class="skill-list">
+						<span class="skill-title">JavaScript</span>
+						<span class="skill-slider average"><s><i></i></s><span>一般</span></span>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<div class="foot"></div>
+	</div>
+</body>
+
+</html>
